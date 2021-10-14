@@ -1,0 +1,149 @@
+\documentclass[sigconf, nonacm]{acmart}
+%% The following content must be adapted for the final version
+% paper-specific
+\newcommand\vldbdoi{XX.XX/XXX.XX}
+\newcommand\vldbpages{XXX-XXX}
+% issue-specific
+\newcommand\vldbvolume{14}
+\newcommand\vldbissue{1}
+\newcommand\vldbyear{2020}
+% should be fine as it is
+\newcommand\vldbauthors{\authors}
+\newcommand\vldbtitle{\shorttitle} 
+% leave empty if no availability url should be set
+\newcommand\vldbavailabilityurl{}
+% whether page numbers should be shown or not, use 'plain' for review versions, 'empty' for camera ready
+\newcommand\vldbpagestyle{plain} 
+
+
+\newcommand{\red}{\textcolor{red}}
+\newcommand{\techreport}{our technical report~\cite{techreport}}
+\newcommand{\titlename}{Scalability and Efficiency of Graph Neural Networks}
+% eat only in tech reports
+\newcommand{\techreporteat}{}
+
+
+%<*tag>
+
+\usepackage{hyperref,array,color,balance,multirow}
+\usepackage{balance,float,url,amsfonts,alltt}
+\usepackage{mathtools,rotating,amsmath}
+
+\usepackage{etoolbox,listings}
+\lstset{basicstyle=\ttfamily\tiny,breaklines=true}
+\usepackage{bigstrut,morefloats,pbox}
+%\usepackage{amsmath}
+\usepackage{graphicx,subfigure,xspace,verbatim,comment}
+\usepackage{grffile}
+\usepackage{ifpdf,fancyvrb}
+\usepackage{algorithm}
+\usepackage[noend]{algorithmic}
+\usepackage{booktabs}
+\usepackage{lipsum}  
+\usepackage[all]{nowidow}
+\usepackage{multirow}
+\usepackage{pifont}
+\usepackage{xcolor}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}{Definition}[section]
+\newcommand{\eat}[1]{}
+\newcommand{\system}{Cerebro on Data Systems}
+ \newcommand{\eqdef}{=\mathrel{\mathop:}}
+ \definecolor{mygreen}{HTML}{3EC300}
+\newcommand{\cmark}{{\color{mygreen} \ding{51}}}%
+\newcommand{\xmark}{\color{red} \ding{55}}%
+
+\DeclareMathOperator*{\gammasum}{\scalerel*{\Gamma}{\sum}}
+\usepackage{scalerel}
+
+%\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+\newenvironment{packeditems}{
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{itemize}}
+
+\newenvironment{packedenums}{
+\begin{enumerate}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{enumerate}}
+
+%\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+\newtoggle{TR}
+%\toggletrue{TR}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+
+\begin{document}\sloppy
+\title{\titlename}
+
+
+
+%\numberofauthors{8}
+\author{Yuhao Zhang}
+\affiliation{%
+\institution{University of California, San Diego}
+}
+\email{yuz870@eng.ucsd.edu}
+
+
+
+\begin{abstract}
+A brief survey of GNN systems.
+
+\end{abstract}
+\maketitle
+
+\pagestyle{\vldbpagestyle}
+\techreporteat{
+%%% do not modify the following VLDB block %%
+%%% VLDB block start %%%
+\begingroup\small\noindent\raggedright\textbf{PVLDB Reference Format:}\\
+Yuhao Zhang. \vldbtitle. PVLDB, \vldbvolume(\vldbissue): \vldbpages, \vldbyear.\\
+\href{https://doi.org/\vldbdoi}{doi:\vldbdoi}
+\endgroup
+\begingroup
+\renewcommand\thefootnote{}\footnote{\noindent
+$^*$Work was done when the author was at VMware, Inc.\\
+This work is licensed under the Creative Commons BY-NC-ND 4.0 International License. Visit \url{https://creativecommons.org/licenses/by-nc-nd/4.0/} to view a copy of this license. For any use beyond those covered by this license, obtain permission by emailing \href{mailto:info@vldb.org}{info@vldb.org}. Copyright is held by the owner/author(s). Publication rights licensed to the VLDB Endowment. \\
+\raggedright Proceedings of the VLDB Endowment, Vol. \vldbvolume, No. \vldbissue\ %
+ISSN 2150-8097. \\
+\href{https://doi.org/\vldbdoi}{doi:\vldbdoi} \\
+}\addtocounter{footnote}{-1}\endgroup
+%%% VLDB block end %%%
+
+%%% do not modify the following VLDB block %%
+%%% VLDB block start %%%
+\ifdefempty{\vldbavailabilityurl}{}{
+\vspace{.3cm}
+\begingroup\small\noindent\raggedright\textbf{PVLDB Artifact Availability:}\\
+The source code, data, and/or other artifacts have been made available at \url{\vldbavailabilityurl}.
+\endgroup
+}
+}
+%%% VLDB block end %%%
+
+
+\input{introduction}
+%\input{overview}
+%\input{experiments}
+%\input{related_work}
+%\input{discussion}
+%\input{acknowledgement}
+
+
+% \pagebreak
+\bibliography{main}
+\bibliographystyle{abbrv}
+%</tag>
+\end{document}

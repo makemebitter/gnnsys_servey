@@ -1,0 +1,46 @@
+\documentclass[sigconf, nonacm]{acmart}
+\usepackage{catchfilebetweentags}
+\usepackage{etoolbox} 
+%% The following content must be adapted for the final version
+% paper-specific
+\newcommand\vldbdoi{XX.XX/XXX.XX}
+\newcommand\vldbpages{XXX-XXX}
+% issue-specific
+\newcommand\vldbvolume{14}
+\newcommand\vldbissue{1}
+\newcommand\vldbyear{2020}
+% should be fine as it is
+\newcommand\vldbauthors{\authors}
+\newcommand\vldbtitle{\shorttitle} 
+% leave empty if no availability url should be set
+\newcommand\vldbavailabilityurl{}
+% whether page numbers should be shown or not, use 'plain' for review versions, 'empty' for camera ready
+\newcommand\vldbpagestyle{plain}
+
+\makeatletter
+\patchcmd{\CatchFBT@Fin@l}{\endlinechar\m@ne}{}{}{}
+\makeatother
+
+
+
+\newcommand{\red}{}
+\newcommand{\techreport}{Appendix}
+\newcommand{\titlename}{Survey of Graph Neural Network Systems}
+\newcommand{\techreporteat}[1]{}
+
+%\makeatletter
+%\def\@copyrightspace{}
+%\makeatother
+%
+%\makeatletter
+%\def\@mkbibcitation{}
+%\makeatother
+
+\ExecuteMetaData[main.tex]{tag}
+
+
+
+%\input{hoho.tex}
+
+
+\end{document}
